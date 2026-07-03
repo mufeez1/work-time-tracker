@@ -200,6 +200,36 @@ td.num {
   text-align: center;
   padding: 30px;
 }
+.skeleton {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--card2) 25%,
+    #31415a 37%,
+    var(--card2) 63%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-shimmer 1.4s ease infinite;
+}
+.skeleton-stack {
+  display: flex;
+  flex-direction: column;
+}
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}
 .link {
   background: none;
   color: var(--accent);
